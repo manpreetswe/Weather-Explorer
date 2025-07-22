@@ -14,4 +14,7 @@ This is a basic Weather App built using **HTML**, **CSS**, and **JavaScript**. I
 
 - HTML5
 - CSS3
-- JavaScript 
+- JavaScript
+   
+## 📁 Project Structure
+qr-code-scanner/ ├── index.html ├── style.css ├── script.js └── README.md
