@@ -1,72 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Explorer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Explorer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <div class="app-container">
-        <header class="app-header">
-    <button id="themeToggle">🌓</button>
-    <h1>Weather Explorer</h1>
-    <p>Stay updated with the latest weather conditions</p>
-     </header>
+<body class="light">
+  <div class="app-container">
+    <header class="app-header">
+      <button id="theme" aria-label="Toggle dark/light mode">🌓</button>
+      <h1><b>Weather Explorer</b>
+      </h1>
+      <p>Stay updated with the latest weather conditions</p>
+    </header>
 
-        <div class="search-container">
-            <input type="text" id="city" placeholder="Enter city name...">
-            <button onclick="getWeather()">Search</button>
-        </div>
-
-        <div class="weather-container">
-            <!-- Current Weather Section -->
-            <section class="current-weather">
-                <div class="icon">
-                    <!-- Current Weather Icon -->
-                </div>
-                <div class="info">
-                    <h2 id="cityName">City</h2>
-                    <p id="temperature">--°C</p>
-                    <p id="description">Description: --</p>
-                </div>
-            </section>
-
-            <!-- Daily Forecast Section -->
-            <section class="forecast">
-                <!-- Forecast Days -->
-                <div class="day">
-                    <p class="weekday">Day</p>
-                    <div class="icon"></div>
-                    <p class="temp">--°C</p>
-                </div>
-                <div class="day">
-                    <p class="weekday">Day</p>
-                    <div class="icon"></div>
-                    <p class="temp">--°C</p>
-                </div>
-                <div class="day">
-                    <p class="weekday">Day</p>
-                    <div class="icon"></div>
-                    <p class="temp">--°C</p>
-                </div>
-                <div class="day">
-                    <p class="weekday">Day</p>
-                    <div class="icon"></div>
-                    <p class="temp">--°C</p>
-                </div>
-            </section>
-
-            <!-- Hourly Forecast Section -->
-            <section class="hourly-container">
-                <h3>Next 12 Hours Forecast</h3>
-                <div id="hourlyForecast" class="hourly-forecast">
-                    <!-- Hourly forecast cards will be appended here by JS -->
-                </div>
-            </section>
-        </div>
+    <div class="search-container">
+      <input type="text" id="city" placeholder="Enter city name..." />
+      <button onclick="getWeather()">Search</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="weather-container">
+      <!-- Current Weather -->
+      <section class="current-weather">
+        <div class="left-panel">
+          <div class="icon" aria-hidden="true"></div>
+          <div>
+            <h2 id="cityName">City</h2>
+            <p id="description">--</p>
+          </div>
+        </div>
+        <div class="right-panel">
+          <p id="temperature">Temperature--°C</p>
+          <p id="feelslike">Feels like --°C</p>
+          <p id="humidity">Humidity: --%</p>
+          <p id="windspeed">Wind: -- m/s</p>
+          <p id="sunrise">Sunrise: --:--</p>
+          <p id="sunset">Sunset: --:--</p>
+        </div>
+      </section>
+
+      <!-- Daily Forecast -->
+      <section class="forecast">
+        <div class="forecast-days">
+          <div class="day">
+            <p class="weekday">Day</p>
+            <div class="icon"></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Day</p>
+            <div class="icon"></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Day</p>
+            <div class="icon"></div>
+            <p class="temp">--°C</p>
+          </div>
+          <div class="day">
+            <p class="weekday">Day</p>
+            <div class="icon"></div>
+            <p class="temp">--°C</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hourly Forecast -->
+      <section class="hourly-container">
+        <h3>Next 12 Hours</h3>
+        <div id="hourlyForecast" class="hourly-forecast">
+          <!-- Hourly forecast cards -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+  </script>
 </body>
 </html>
