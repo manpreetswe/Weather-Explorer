@@ -385,3 +385,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+/* Hide all weather output sections initially */
+.weather-container {
+  display: none;
+}
+
