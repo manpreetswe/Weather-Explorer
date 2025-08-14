@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weather Explorer</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="io.css" />
 </head>
 <body class="light">
   <div class="app-container">
@@ -14,7 +14,7 @@
       </h1>
       <p>Stay updated with the latest weather conditions</p>
     </header>
-
+     <p id="localTime">Local Time: --:--</p>
     <div class="search-container">
       <input type="text" id="city" placeholder="Enter city name..." />
       <button onclick="getWeather()">Search</button>
@@ -31,8 +31,8 @@
           </div>
         </div>
         <div class="right-panel">
-          <p id="temperature">Temperature--°C</p>
-          <p id="feelslike">Feels like --°C</p>
+          <p id="temperature">Temp--°C</p>
+          <p id="feelslike">Feels Like --°C</p>
           <p id="humidity">Humidity: --%</p>
           <p id="windspeed">Wind: -- m/s</p>
           <p id="sunrise">Sunrise: --:--</p>
@@ -68,7 +68,7 @@
 
       <!-- Hourly Forecast -->
       <section class="hourly-container">
-        <h3>Next 12 Hours</h3>
+        <h3>Next Following Hours</h3>
         <div id="hourlyForecast" class="hourly-forecast">
           <!-- Hourly forecast cards -->
         </div>
@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="io.js"></script>
   
   </script>
 </body>
