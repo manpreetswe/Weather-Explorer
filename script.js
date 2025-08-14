@@ -16,7 +16,11 @@ document.getElementById("theme").addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// Helper: format time in AM/PM (local system time)
+// Initially hide weather container
+const weatherContainer = document.querySelector(".weather-container");
+weatherContainer.style.display = "none";
+
+// Helper: format time in AM/PM
 function formatTime(timestamp) {
   const date = new Date(timestamp * 1000);
   return date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
@@ -42,6 +46,9 @@ async function getWeather() {
     const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     const weatherData = await weatherRes.json();
     if (weatherData.cod !== 200) throw new Error(weatherData.message);
+
+    // Show weather container
+    weatherContainer.style.display = "block";
 
     // Update current weather UI
     document.getElementById("cityName").textContent = `${weatherData.name}, ${weatherData.sys.country}`;
@@ -74,7 +81,7 @@ async function getForecast(lat, lon) {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
     const data = await res.json();
 
-    // 4-day forecast (existing code)
+    // 4-day forecast
     const forecastEls = document.querySelectorAll(".forecast-days .day");
     const dailyData = {};
     let dayIndex = 0;
